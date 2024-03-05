@@ -1,0 +1,36 @@
+# earth
+earth_rotation_speed: 7.2921151467e-05  # rad/s
+earth_gravity: 9.794444352667332154
+
+# reference point (经纬高)
+init_position_lla: [114.47, 30.45, 0.0]  # [deg, deg, m]
+
+# kalman prediction process std
+init_position_std: [1.0e-5, 1.0e-5, 1.0e-5] # [m]
+init_velocity_std: [1.0e-5, 1.0e-5, 1.0e-5] # [m/s]
+init_rotation_std: [1.0e-5, 1.0e-5, 1.0e-5] # [deg]
+init_bg_std: [ 1, 1, 1 ]          # [deg/h]
+init_ba_std: [ 50, 50, 50 ]       # [mGal]
+init_sg_std: [ 300, 300, 300 ]    # [ppm]
+init_sa_std: [ 300, 300, 300 ]    # [ppm]
+
+# imu sensor noise
+# mid-accuracy IMU
+arw: [0.25, 0.25, 0.25]          # [deg/sqrt(hr)]
+vrw: [0.03, 0.03, 0.03]          # [m/s/sqrt(hr)]
+bg_std: [3.5, 3.5, 3.5]        # [deg/hr]
+ba_std: [5.0, 5.0, 5.0]     # [mGal]=[1e-5 m/s^2]
+sg_std: [300.0, 300.0, 300.0]  # [ppm]
+sa_std: [300.0, 300.0, 300.0]  # [ppm]
+corr_time: 0.028                    # [hr]
+
+# kalman measurement process std (uint: m)
+gps_position_x_std: 5
+gps_position_y_std: 5
+gps_position_z_std: 8
+
+# only use prediction, equivalent to only using IMU to integration
+only_prediction: false
+
+# use earth model
+use_earth_model: false
